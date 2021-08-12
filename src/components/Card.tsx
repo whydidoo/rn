@@ -1,7 +1,7 @@
 import React from 'react';
-import {Dimensions, Image, StyleSheet} from 'react-native';
+import { Dimensions, Image, StyleSheet } from 'react-native';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 const ratio = 228 / 362;
 export const CARD_WIDTH = width * 0.8;
 export const CARD_HEIGHT = CARD_WIDTH * ratio;
@@ -44,7 +44,7 @@ interface CardProps {
   card: Cards;
 }
 
-const Card = ({card}: CardProps) => {
+const Card = ({ card }: CardProps) => {
   return <Image style={styles.card} source={assets[card]} />;
 };
 

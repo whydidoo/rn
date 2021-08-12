@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
-import {Card, Cards} from '../../index';
+import { Card, Cards } from '../../index';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,8 +14,8 @@ interface GestureProps {
   height: number;
 }
 
-const Gesture = ({width, height}: GestureProps) => {
-  console.log({width, height});
+const Gesture = ({ width, height }: GestureProps) => {
+  console.log({ width, height });
   return (
     <View style={styles.container}>
       <Card card={Cards.Card1} />

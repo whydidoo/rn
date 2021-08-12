@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Animated, {
   useAnimatedGestureHandler,
   useSharedValue,
@@ -10,9 +10,9 @@ import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
-import {clamp, withBouncing} from 'react-native-redash';
+import { clamp, withBouncing } from 'react-native-redash';
 
-import {Card, Cards, CARD_WIDTH, CARD_HEIGHT} from '../index';
+import { Card, Cards, CARD_WIDTH, CARD_HEIGHT } from '../index';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +25,7 @@ interface GestureProps {
   height: number;
 }
 
-export const Gesture = ({width, height}: GestureProps) => {
+export const Gesture = ({ width, height }: GestureProps) => {
   const boundX = width - CARD_WIDTH;
   const boundY = height - CARD_HEIGHT;
   const translateX = useSharedValue(0);
@@ -46,7 +46,7 @@ export const Gesture = ({width, height}: GestureProps) => {
       translateX.value = clamp(ctx.offsetX + event.translationX, 0, boundX);
       translateY.value = clamp(ctx.offsetY + event.translationY, 0, boundY);
     },
-    onEnd: ({velocityX, velocityY}) => {
+    onEnd: ({ velocityX, velocityY }) => {
       translateX.value = withBouncing(
         withDecay({
           velocity: velocityX,
@@ -67,8 +67,8 @@ export const Gesture = ({width, height}: GestureProps) => {
   const style = useAnimatedStyle(() => {
     return {
       transform: [
-        {translateX: translateX.value},
-        {translateY: translateY.value},
+        { translateX: translateX.value },
+        { translateY: translateY.value },
       ],
     };
   });
@@ -76,7 +76,7 @@ export const Gesture = ({width, height}: GestureProps) => {
   return (
     <View style={styles.container}>
       <PanGestureHandler onGestureEvent={onGestureEvent}>
-        <Animated.View {...{style}}>
+        <Animated.View {...{ style }}>
           <Card card={Cards.Card2} />
         </Animated.View>
       </PanGestureHandler>
