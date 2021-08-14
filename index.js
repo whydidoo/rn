@@ -9,6 +9,8 @@ import { StorybookUIRoot } from './storybook';
 import { configure } from '@storybook/react-native';
 import { loadStories } from './storybook/storyLoader';
 
+console.disableYellowBox = true;
+
 if (env.STORYBOOK) {
   // import stories
   configure(() => {

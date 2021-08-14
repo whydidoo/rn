@@ -4,7 +4,7 @@ import { ITheme } from './types';
 import { typography } from './typography';
 
 let genArr = new Array(12).fill(1);
-let step = 4;
+let step = 5;
 
 let space = genArr.map((_, index) => index * step);
 let radii = genArr.map((_, index) => index * step);
