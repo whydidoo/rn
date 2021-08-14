@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 
-export const App = () => {
-  return <View />;
+export const App: React.FC = () => {
+  return <View></View>;
 };

@@ -1,0 +1,11 @@
+{
+  "gray1": "#7B6F72",
+  "gray2": "#ADA4A5",
+  "gray3": "#DDDADA",
+  "whiteColor": "#ffffff",
+  "blackColor": "#000000",
+  "borderColor": "#F7F8F8",
+  "success": "#42D742",
+  "warning": "#FFD600",
+  "danger": "#FF0000"
+}

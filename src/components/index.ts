@@ -1,1 +1,3 @@
-export { default as Card, Cards, cards, CARD_HEIGHT, CARD_WIDTH } from './Card';
+export * from './Box';
+export * from './Text';
+export * from './GradientBox';

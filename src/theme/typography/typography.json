@@ -1,0 +1,218 @@
+{
+  "H1Bold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 26,
+    "lineHeight": 39,
+    "fontWeight": "bold"
+  },
+  "H1SemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 26,
+    "lineHeight": 39,
+    "fontWeight": "600"
+  },
+  "H1Medium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 26,
+    "lineHeight": 39,
+    "fontWeight": "500"
+  },
+  "H1Regular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 26,
+    "lineHeight": 39,
+    "fontWeight": "normal"
+  },
+  "H2Bold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 24,
+    "lineHeight": 36,
+    "fontWeight": "bold"
+  },
+  "H2SemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 24,
+    "lineHeight": 36,
+    "fontWeight": "600"
+  },
+  "H2Medium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 24,
+    "lineHeight": 36,
+    "fontWeight": "500"
+  },
+  "H2Regular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 24,
+    "lineHeight": 36,
+    "fontWeight": "normal"
+  },
+  "H3Bold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 22,
+    "lineHeight": 33,
+    "fontWeight": "bold"
+  },
+  "H3SemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 22,
+    "lineHeight": 33,
+    "fontWeight": "600"
+  },
+  "H3Medium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 22,
+    "lineHeight": 33,
+    "fontWeight": "500"
+  },
+  "H3Regular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 22,
+    "lineHeight": 33,
+    "fontWeight": "normal"
+  },
+  "H4Bold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 20,
+    "lineHeight": 30,
+    "fontWeight": "bold"
+  },
+  "H4SemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 20,
+    "lineHeight": 30,
+    "fontWeight": "600"
+  },
+  "H4Medium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 20,
+    "lineHeight": 30,
+    "fontWeight": "500"
+  },
+  "H4Regular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 20,
+    "lineHeight": 30,
+    "fontWeight": "normal"
+  },
+  "SubtitleBold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 18,
+    "lineHeight": 27,
+    "fontWeight": "bold"
+  },
+  "SubtitleSemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 18,
+    "lineHeight": 27,
+    "fontWeight": "600"
+  },
+  "SubtitleMedium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 18,
+    "lineHeight": 27,
+    "fontWeight": "500"
+  },
+  "SubtitleRegular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 18,
+    "lineHeight": 27,
+    "fontWeight": "normal"
+  },
+  "LargeTextBold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 16,
+    "lineHeight": 24,
+    "fontWeight": "bold"
+  },
+  "LargeTextSemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 16,
+    "lineHeight": 24,
+    "fontWeight": "600"
+  },
+  "LargeTextMedium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 16,
+    "lineHeight": 24,
+    "fontWeight": "500"
+  },
+  "LargeTextRegular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 16,
+    "lineHeight": 24,
+    "fontWeight": "normal"
+  },
+  "MediumTextBold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 14,
+    "lineHeight": 21,
+    "fontWeight": "bold"
+  },
+  "MediumTextSemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 14,
+    "lineHeight": 21,
+    "fontWeight": "600"
+  },
+  "MediumTextMedium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 14,
+    "lineHeight": 21,
+    "fontWeight": "500"
+  },
+  "MediumTextRegular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 14,
+    "lineHeight": 21,
+    "fontWeight": "normal"
+  },
+  "SmallTextBold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 12,
+    "lineHeight": 18,
+    "fontWeight": "bold"
+  },
+  "SmallTextSemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 12,
+    "lineHeight": 18,
+    "fontWeight": "600"
+  },
+  "SmallTextMedium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 12,
+    "lineHeight": 18,
+    "fontWeight": "500"
+  },
+  "SmallTextRegular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 12,
+    "lineHeight": 18,
+    "fontWeight": "normal"
+  },
+  "CaptionBold": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 10,
+    "lineHeight": 15,
+    "fontWeight": "bold"
+  },
+  "CaptionSemiBold": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 10,
+    "lineHeight": 15,
+    "fontWeight": "600"
+  },
+  "CaptionMedium": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 10,
+    "lineHeight": 15,
+    "fontWeight": "500"
+  },
+  "CaptionRegular": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 10,
+    "lineHeight": 15,
+    "fontWeight": "normal"
+  }
+}
