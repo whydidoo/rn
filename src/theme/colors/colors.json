@@ -1,10 +1,4 @@
 {
-  "blueLinear": "linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%)",
-  "purpleLinear": "linear-gradient(274.42deg, #C58BF2 0%, #EEA4CE 124.45%)",
-  "caloriesLinear": "linear-gradient(180deg, #C58BF2 -52.86%, #B4C0FE 67.86%)",
-  "progressBarLinear": "linear-gradient(272.69deg, #C58BF2 -59.92%, #92A3FD 86.39%)",
-  "waterIntakeLinear": "linear-gradient(180deg, #C58BF2 -83.11%, #B4C0FE 60.6%)",
-  "logoLinear": "linear-gradient(274.34deg, #CC8FED -83.99%, #9DCEFF 142.46%)",
   "gray1": "#7B6F72",
   "gray2": "#ADA4A5",
   "gray3": "#DDDADA",
