@@ -10,6 +10,7 @@ function loadStories() {
   require('../src/components/Input/Input.stories');
   require('../src/components/Select/Select.stories');
   require('../src/components/Text/Text.stories');
+  require('../src/components/Toggle/Toggle.stories');
   require('../src/components/Unit/Unit.stories');
 }
 
@@ -20,6 +21,7 @@ const stories = [
   '../src/components/Input/Input.stories',
   '../src/components/Select/Select.stories',
   '../src/components/Text/Text.stories',
+  '../src/components/Toggle/Toggle.stories',
   '../src/components/Unit/Unit.stories',
 ];
 

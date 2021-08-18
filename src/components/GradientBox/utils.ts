@@ -1,10 +1,6 @@
 import { LinearGradientProps } from 'react-native-linear-gradient';
 import { TGradient } from './types';
 
-interface IGradientProps {
-  start: { x: number; y: number };
-  locations: number[];
-}
 export const getThemeGradient = (
   gradientName: TGradient,
 ): Pick<
