@@ -1,14 +1,16 @@
 import React from 'react';
 import RNPickerSelect from 'react-native-picker-select';
-import { useGetColorsByTheme } from '../hooks';
+import { useGetColorsByTheme } from '../../theme/hooks';
 import { useRef } from 'react';
 import { useMemo } from 'react';
 import { useTheme } from 'styled-components/native';
 import { ITheme } from '../../theme';
 import Arrow from '../Icons/Light/Arrow - Down 2.svg';
-import textJSON from '../../theme/typography/typography.json';
-import { InputContainerStyled, InputIconStyled } from './styled';
+import { typography } from '../../theme/typography';
+import { IconStyled, SelectContainerStyled } from './styled';
 import { ISelectProps } from './types';
+import { TextStyle } from 'react-native';
+import { formatIcon } from 'components/utils';
 
 export const Select: React.FC<ISelectProps> = ({
   icon,
@@ -20,28 +22,26 @@ export const Select: React.FC<ISelectProps> = ({
   const ref = useRef<RNPickerSelect>(null);
   const { gray2, borderColor, gray1 } = useGetColorsByTheme();
   const { radii, space } = useTheme() as ITheme;
-  const ComponentSVG = icon;
 
   const radius = radii[3];
-  const pl = ComponentSVG ? space[9] : space[3];
+  const pl = icon ? space[9] : space[3];
+  const pr = space[9];
+  const paddingDefault = space[3];
 
   const viewContainer = useMemo(
     () => ({
       backgroundColor: borderColor,
       borderRadius: radius,
-      height: 48,
       paddingLeft: pl,
+      paddingRight: pr,
+      height: 48,
     }),
-    [borderColor, radius, pl],
+    [borderColor, radius, pl, pr],
   );
 
   return (
-    <InputContainerStyled>
-      {ComponentSVG && (
-        <InputIconStyled>
-          <ComponentSVG color={gray1} width={24} height={24} />
-        </InputIconStyled>
-      )}
+    <SelectContainerStyled>
+      {icon && <IconStyled>{formatIcon(icon, 18, gray1)}</IconStyled>}
       <RNPickerSelect
         value={value}
         ref={ref}
@@ -51,18 +51,25 @@ export const Select: React.FC<ISelectProps> = ({
           inputIOS: viewContainer,
           iconContainer: {
             top: 12,
-            right: 15,
+            right: paddingDefault,
           },
-          placeholder: { ...(textJSON.SmallTextRegular as any), color: gray1 },
+          placeholder: {
+            ...(typography.SmallTextRegular as TextStyle),
+            color: gray2,
+          },
           inputAndroid: viewContainer,
+          inputAndroidContainer: {
+            flexShrink: 1,
+          },
         }}
         useNativeAndroidPickerStyle={false}
         placeholder={{
           value: null,
           label: placeholder,
+          color: gray2,
         }}
         {...props}
       />
-    </InputContainerStyled>
+    </SelectContainerStyled>
   );
 };

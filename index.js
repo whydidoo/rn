@@ -1,7 +1,7 @@
 /**
  * @format
  */
-import { AppRegistry } from 'react-native';
+import { AppRegistry, Platform } from 'react-native';
 import { App } from './App';
 import { name as appName } from './app.json';
 import { env } from './config';
@@ -11,7 +11,7 @@ import { loadStories } from './storybook/storyLoader';
 
 console.disableYellowBox = true;
 
-if (env.STORYBOOK) {
+if (env.STORYBOOK || Platform.OS === 'ios') {
   // import stories
   configure(() => {
     loadStories();

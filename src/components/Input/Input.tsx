@@ -1,67 +1,46 @@
-import React, { useCallback, useRef } from 'react';
-import { Pressable, TextInput as RNTextInput } from 'react-native';
-import { ITextInputProps } from './types';
+import React, { useCallback } from 'react';
+import { Pressable } from 'react-native';
+import { IInputProps } from './types';
 import { useState } from 'react';
-import Hide from '../Icons/Light/Hide.svg';
+import Hide from '../Icons/Bold/Hide.svg';
+import Show from '../Icons/Bold/Show.svg';
+
 import {
   IconHideStyled,
+  IconStyled,
   InputContainerStyled,
-  InputIconStyled,
-  InputStyled,
+  TextInputStyled,
 } from './styled';
-import { useGetColorsByTheme } from '../hooks';
+import { useGetColorsByTheme } from 'theme';
+import { formatIcon } from '../utils';
 
-export const Input: React.FC<ITextInputProps> = ({
+export const Input: React.FC<IInputProps> = ({
   icon,
-  isSecure,
-  value,
+  secureTextEntry,
   ...props
 }) => {
-  const [secure, setSecure] = useState(isSecure);
-  const passwordInput = useRef<RNTextInput>(null);
-
-  const ComponentSVG = icon;
-  const { gray1, gray2 } = useGetColorsByTheme();
-
-  const onPressHide = useCallback(() => setSecure(prev => !prev), []);
-
-  // TODO bug fix value
-  // useEffect(() => {
-  //   if (isSecure) {
-  //     passwordInput.current?.setNativeProps({
-  //       style: typographyJson.SmallTextRegular,
-  //     });
-  //   }
-  // }, [isSecure, secure]);
+  const [show, setShow] = useState(secureTextEntry);
+  const onPress = useCallback(() => setShow(value => !value), []);
+  const { gray2, gray1 } = useGetColorsByTheme();
 
   return (
     <InputContainerStyled>
-      {ComponentSVG && (
-        <InputIconStyled>
-          <ComponentSVG color={gray1} width={24} height={24} />
-        </InputIconStyled>
-      )}
-      <InputStyled
-        width="100%"
-        placeholderTextColor={gray2}
-        color="gray2"
-        bg="borderColor"
-        borderWidth={1}
-        borderColor="borderColor"
-        borderRadius={3}
-        height={48}
-        variant="SmallTextRegular"
-        pl={ComponentSVG ? 9 : 3}
-        pr={isSecure ? 9 : 3}
-        ref={passwordInput}
-        secureTextEntry={secure && !!value}
-        value={value}
+      {icon && <IconStyled>{formatIcon(icon, 18, gray1)}</IconStyled>}
+      <TextInputStyled
         {...props}
+        secureTextEntry={show}
+        placeholderTextColor={gray2}
+        withHide={secureTextEntry}
+        withIcon={!!icon}
       />
-      {isSecure && (
+      {secureTextEntry && (
         <IconHideStyled>
-          <Pressable onPress={onPressHide}>
-            <Hide color={gray2} width={24} height={24} />
+          <Pressable onPress={onPress}>
+            {show ? (
+              <Hide width={18} height={18} fill={gray1} />
+            ) : (
+              <Show width={18} height={18} fill={gray1} />
+            )}
           </Pressable>
         </IconHideStyled>
       )}
