@@ -17,6 +17,8 @@ export const Button: React.FC<IButtonProps> = ({
   iconLeft,
   iconRight,
   text,
+  fillIconRightProp = 'stroke',
+  fillIconLeftProp = 'stroke',
   ...props
 }) => {
   const { whiteColor } = useGetColorsByTheme();
@@ -44,13 +46,13 @@ export const Button: React.FC<IButtonProps> = ({
         gradient={type === 'primary' ? 'blueLinear' : 'purpleLinear'}>
         {iconLeft && (
           <IconLeftStyled>
-            {formatIcon(iconLeft, 24, whiteColor)}
+            {formatIcon(iconLeft, 24, fillIconLeftProp, whiteColor)}
           </IconLeftStyled>
         )}
         {text ? <TextStyled type={type}>{text}</TextStyled> : null}
         {iconRight && (
           <IconRightStyled>
-            {formatIcon(iconRight, 24, whiteColor)}
+            {formatIcon(iconRight, 24, fillIconRightProp, whiteColor)}
           </IconRightStyled>
         )}
       </GradientStyled>

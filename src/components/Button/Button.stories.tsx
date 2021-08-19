@@ -12,23 +12,17 @@ storiesOf('Button', module)
     <Button
       type="primary"
       text="sdfsdfsd"
-      iconLeft={<Login width={24} height={24} needFillColor />}
-      iconRight={<User width={24} height={24} needStrokeColor />}
+      iconLeft={<Login width={24} height={24} />}
+      iconRight={<User width={24} height={24} />}
+      fillIconLeftProp="fill"
     />
   ))
   .add('Secondary', () => <Button type="secondary" text="sdfsdfsd" />)
   .add('ButtonCircle', () => (
     <Box bg="whiteColor" px={5} flex={1} flexDirection="row">
-      <ButtonCircle
-        type="ordinary"
-        icon={<User width={24} height={24} needStrokeColor />}
-      />
+      <ButtonCircle type="ordinary" icon={<User width={24} height={24} />} />
 
       <Gap size={20} />
-      <ButtonCircle
-        type="progress"
-        progressValue={75}
-        icon={<User needStrokeColor />}
-      />
+      <ButtonCircle type="progress" progressValue={75} icon={<User />} />
     </Box>
   ));

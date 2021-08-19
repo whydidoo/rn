@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { TextInputProps as RNTextInputProps } from 'react-native';
+import { TFillProp } from 'theme';
 
 export interface InputStyledProps {
   withIcon: boolean;
@@ -7,4 +8,5 @@ export interface InputStyledProps {
 }
 export interface IInputProps extends RNTextInputProps {
   icon?: ReactNode;
+  fillPropIcon?: TFillProp;
 }

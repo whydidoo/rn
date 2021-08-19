@@ -7,15 +7,7 @@ import {
   ShadowProps,
   SpaceProps,
 } from 'styled-system';
-import { IThemeBordersProps } from '../../theme';
-
-export type TGradient =
-  | 'blueLinear'
-  | 'purpleLinear'
-  | 'caloriesLinear'
-  | 'progressBarLinear'
-  | 'waterIntakeLinear'
-  | 'logoLinear';
+import { IThemeBordersProps, TGradient } from '../../theme';
 
 export interface IGradientBoxProps
   extends Omit<LinearGradientProps, 'colors'>,

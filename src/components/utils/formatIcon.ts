@@ -1,41 +1,27 @@
 import React from 'react';
 import { SvgProps } from 'react-native-svg';
+import { TFillProp } from 'theme';
 
-type TColorReplace = { strokeReplace?: string; fillReplace?: string };
-type TPropsSVG = {
-  needStrokeColor?: boolean;
-  needFillColor?: boolean;
-};
 export const formatIcon = (
   icon: React.ReactNode,
   size: number,
+  fillProp?: TFillProp,
   color?: string,
 ) => {
   const element = icon as React.ReactElement;
 
-  let { needFillColor, needStrokeColor, fill, stroke } =
-    element.props as SvgProps & TPropsSVG;
-
-  if (needFillColor && needStrokeColor) {
-    throw new Error('Можно заменять только один параметр');
+  if (fillProp && !color) {
+    throw new Error('Укажите цвет замены');
   }
 
-  if (needFillColor) {
-    fill = color;
+  const props = {
+    width: size,
+    height: size,
+  } as SvgProps;
+
+  if (fillProp) {
+    props[fillProp] = color;
   }
 
-  if (needStrokeColor) {
-    stroke = color;
-  }
-
-  return React.cloneElement(
-    element,
-    {
-      width: size,
-      height: size,
-      fill,
-      stroke,
-    },
-    null,
-  );
+  return React.cloneElement(element, props, null);
 };

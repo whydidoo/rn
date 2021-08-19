@@ -7,6 +7,7 @@ function loadStories() {
   require('../src/components/Box/Box.stories');
   require('../src/components/Button/Button.stories');
   require('../src/components/GradientBox/GradientBox.stories');
+  require('../src/components/IconGradient/IconGradient.stories');
   require('../src/components/Input/Input.stories');
   require('../src/components/Select/Select.stories');
   require('../src/components/Text/Text.stories');
@@ -18,6 +19,7 @@ const stories = [
   '../src/components/Box/Box.stories',
   '../src/components/Button/Button.stories',
   '../src/components/GradientBox/GradientBox.stories',
+  '../src/components/IconGradient/IconGradient.stories',
   '../src/components/Input/Input.stories',
   '../src/components/Select/Select.stories',
   '../src/components/Text/Text.stories',

@@ -17,6 +17,7 @@ export const Select: React.FC<ISelectProps> = ({
   value,
   onValueChange,
   placeholder = '',
+  fillPropIcon = 'stroke',
   ...props
 }) => {
   const ref = useRef<RNPickerSelect>(null);
@@ -41,7 +42,9 @@ export const Select: React.FC<ISelectProps> = ({
 
   return (
     <SelectContainerStyled>
-      {icon && <IconStyled>{formatIcon(icon, 18, gray1)}</IconStyled>}
+      {icon && (
+        <IconStyled>{formatIcon(icon, 18, fillPropIcon, gray1)}</IconStyled>
+      )}
       <RNPickerSelect
         value={value}
         ref={ref}

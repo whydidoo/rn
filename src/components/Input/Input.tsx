@@ -17,6 +17,7 @@ import { formatIcon } from '../utils';
 export const Input: React.FC<IInputProps> = ({
   icon,
   secureTextEntry,
+  fillPropIcon = 'stroke',
   ...props
 }) => {
   const [show, setShow] = useState(secureTextEntry);
@@ -25,7 +26,9 @@ export const Input: React.FC<IInputProps> = ({
 
   return (
     <InputContainerStyled>
-      {icon && <IconStyled>{formatIcon(icon, 18, gray1)}</IconStyled>}
+      {icon && (
+        <IconStyled>{formatIcon(icon, 18, fillPropIcon, gray1)}</IconStyled>
+      )}
       <TextInputStyled
         {...props}
         secureTextEntry={show}

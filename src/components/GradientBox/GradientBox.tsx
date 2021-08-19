@@ -15,7 +15,7 @@ import {
   space,
 } from 'styled-system';
 import { IGradientBoxProps } from './types';
-import { getThemeGradient } from './utils';
+import { getThemeGradient } from '../../theme';
 
 export const styledProps = compose(
   border,

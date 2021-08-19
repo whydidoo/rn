@@ -10,6 +10,7 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
   type = 'ordinary',
   icon,
   progressValue,
+  fillIconProp = 'stroke',
   ...props
 }) => {
   const styleContainer: ViewStyle = useMemo(
@@ -24,7 +25,7 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
 
   const sizeIcon = type === 'ordinary' ? 24 : 18;
 
-  const iconFormat = formatIcon(icon, sizeIcon, whiteColor);
+  const iconFormat = formatIcon(icon, sizeIcon, fillIconProp, whiteColor);
 
   const withCircle = type === 'progress' && progressValue;
 

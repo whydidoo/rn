@@ -2,7 +2,6 @@ import React, { useCallback, useEffect } from 'react';
 import { IToggleProps } from './types';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
-import { getThemeGradient } from 'components/GradientBox/utils';
 import {
   CircleStyled,
   GradientStyled,
@@ -18,7 +17,7 @@ import Animated, {
   interpolate,
   useSharedValue,
 } from 'react-native-reanimated';
-import { useGetColorsByTheme } from 'theme';
+import { useGetColorsByTheme, getThemeGradient } from 'theme';
 
 const CircleStyledAnimated = Animated.createAnimatedComponent(CircleStyled);
 const AnimatedGradient = Animated.createAnimatedComponent(GradientStyled);
