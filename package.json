@@ -14,21 +14,26 @@
     "prestorybook": "rnstl",
     "storybook": "start-storybook -p 7007",
     "storybookAndroid": "npm run prestorybook && ENVFILE=.env.storybook react-native run-android",
+    "storybookIOS": "npm run prestorybook && ENVFILE=.env.storybook react-native run-ios",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@react-native-picker/picker": "^1.16.5",
     "@react-navigation/native": "^6.0.2",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
+    "d3": "^6.7.0",
     "react": "17.0.1",
     "react-native": "0.64.1",
     "react-native-config": "^1.4.3",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-linear-gradient": "^2.5.6",
+    "react-native-picker-select": "^8.0.4",
     "react-native-reanimated": "^2.2.0",
     "react-native-redash": "^16.2.0",
     "react-native-safe-area-context": "^3.3.0",
     "react-native-screens": "^3.5.0",
+    "react-native-svg": "^12.1.1",
     "styled-components": "^5.3.0",
     "styled-system": "^5.1.5"
   },
@@ -43,14 +48,17 @@
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
+    "@types/d3": "^7.0.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.64.5",
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.1.12",
     "@types/styled-components-react-native": "^5.1.1",
     "@types/styled-system": "^5.1.12",
+    "@types/styled-system__css": "^5.0.16",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.14.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.1",
@@ -60,11 +68,13 @@
     "prettier": "^2.3.2",
     "react-dom": "^17.0.1",
     "react-native-storybook-loader": "^2.0.4",
+    "react-native-svg-transformer": "^0.14.3",
     "react-test-renderer": "17.0.1",
     "typescript": "^3.8.3"
   },
   "resolutions": {
-    "@types/react": "^17"
+    "@types/react": "^17",
+    "d3-array": "1"
   },
   "husky": {
     "hooks": {

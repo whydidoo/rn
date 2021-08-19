@@ -1,3 +1,4 @@
+import { variant } from 'styled-system';
 import typography from './typography.json';
 
 export type TVariantsText = keyof typeof typography;
@@ -12,4 +13,24 @@ interface ITextVariant {
 
 export type TTextTransfrom = 'none' | 'capitalize' | 'uppercase' | 'lowercase';
 export type TText = Record<TVariantsText, ITextVariant>;
-export { typography };
+
+const textTransform = variant({
+  prop: 'textTransform',
+  variants: {
+    none: {
+      textTransform: 'none',
+    },
+    capitalize: {
+      textTransform: 'capitalize',
+    },
+    uppercase: {
+      textTransform: 'uppercase',
+    },
+    lowercase: {
+      textTransform: 'lowercase',
+    },
+  },
+});
+
+const textVariant = variant({ key: 'text' });
+export { typography, textTransform, textVariant };

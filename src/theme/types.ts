@@ -11,6 +11,16 @@ export interface ITheme {
   text: TText;
 }
 
+export type TFillProp = 'fill' | 'stroke';
+
+export type TGradient =
+  | 'blueLinear'
+  | 'purpleLinear'
+  | 'caloriesLinear'
+  | 'progressBarLinear'
+  | 'waterIntakeLinear'
+  | 'logoLinear';
+
 type OmitBorderProps = Omit<
   BorderProps,
   | 'borderColor'
