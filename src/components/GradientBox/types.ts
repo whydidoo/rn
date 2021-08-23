@@ -1,4 +1,5 @@
 import { LinearGradientProps } from 'react-native-linear-gradient';
+
 import {
   FlexboxProps,
   GridProps,
@@ -7,6 +8,7 @@ import {
   ShadowProps,
   SpaceProps,
 } from 'styled-system';
+
 import { IThemeBordersProps, TGradient } from '../../theme';
 
 export interface IGradientBoxProps

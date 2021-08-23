@@ -1,7 +1,9 @@
-import css, { SystemStyleObject } from '@styled-system/css';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
+import css, { SystemStyleObject } from '@styled-system/css';
 import styled from 'styled-components/native';
 import { variant } from 'styled-system';
+
 import { GradientBox } from '../..';
 import { IButtonCircleProps, TButtonCircle } from './types';
 

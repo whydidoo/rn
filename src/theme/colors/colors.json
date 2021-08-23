@@ -7,5 +7,6 @@
   "borderColor": "#F7F8F8",
   "success": "#42D742",
   "warning": "#FFD600",
-  "danger": "#FF0000"
+  "danger": "#FF0000",
+  "purple": "#c78def"
 }

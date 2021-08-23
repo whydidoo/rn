@@ -1,38 +1,60 @@
 import * as React from 'react';
+import { useEffect } from 'react';
+import Animated, {
+  useDerivedValue,
+  withTiming,
+  useSharedValue,
+  useAnimatedProps,
+  interpolate,
+} from 'react-native-reanimated';
 import Svg, { Defs, LinearGradient, Stop, Path, G } from 'react-native-svg';
-import Animated from 'react-native-reanimated';
-import { arc } from 'd3';
+
+import { describeArc } from 'components/utils';
+
 import { useGetColorsByTheme } from '../../../theme';
 
 const size = 60;
+const strokeWidth = 2;
+const r = (size - strokeWidth) / 2;
+const cx = size / 2;
+const cy = size / 2;
+
+const dFull = describeArc(cx, cy, r, 0, 359);
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 interface CircularPogressProps {
-  progress: 25 | 50 | 75 | 100;
+  progress: number;
 }
 
 export const Circle: React.FC<CircularPogressProps> = ({ progress }) => {
-  const center = size / 2;
   const outerRadius = size / 2;
-
-  const proportion = progress / 100;
-
-  const full = arc()({
-    innerRadius: outerRadius - 2,
-    outerRadius: outerRadius - 1,
-    startAngle: 0,
-    endAngle: 2 * Math.PI,
-  })!;
-
-  const progressPath = arc().cornerRadius(20)({
-    innerRadius: outerRadius - 3,
-    outerRadius,
-    startAngle: 0,
-    endAngle: proportion * 2 * Math.PI,
-  })!;
-
+  const proportion = useSharedValue(progress / 100);
   const { borderColor } = useGetColorsByTheme();
+
+  if (progress < 0) {
+    throw new Error('Значение progress должно быть больше 0');
+  }
+
+  useEffect(() => {
+    let value = progress;
+
+    if (progress > 100) {
+      value = 100;
+    }
+
+    proportion.value = withTiming(value / 100, { duration: 400 });
+  }, [progress, proportion]);
+
+  const angle = useDerivedValue(() => {
+    return interpolate(proportion.value, [0, 1], [0, 359.99]);
+  }, []);
+
+  const animatedProps = useAnimatedProps(() => {
+    return {
+      d: describeArc(cx, cy, r, 0, angle.value),
+    };
+  }, [proportion, outerRadius]);
 
   return (
     <Svg width={size} height={size}>
@@ -43,16 +65,12 @@ export const Circle: React.FC<CircularPogressProps> = ({ progress }) => {
         </LinearGradient>
       </Defs>
       <G>
-        <Path
-          fill={borderColor}
-          d={full}
-          transform={`translate(${center}, ${center})`}
-        />
+        <Path stroke={borderColor} d={dFull} strokeWidth={2} />
         <AnimatedPath
-          fill="url(#grad)"
-          d={progressPath}
+          stroke="url(#grad)"
+          animatedProps={animatedProps}
           strokeLinecap="round"
-          transform={`translate(${center}, ${center})`}
+          strokeWidth={strokeWidth}
         />
       </G>
     </Svg>

@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 import { ViewStyle } from 'react-native';
+
 import { useGetColorsByTheme } from 'theme';
+
 import { formatIcon } from '../../utils';
 import { Circle } from './Circle';
 import { ButtonStyled, GradientStyled } from './styled';
@@ -23,11 +25,11 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
 
   const { whiteColor } = useGetColorsByTheme();
 
-  const sizeIcon = type === 'ordinary' ? 24 : 18;
+  const sizeIcon = 24;
 
   const iconFormat = formatIcon(icon, sizeIcon, fillIconProp, whiteColor);
 
-  const withCircle = type === 'progress' && progressValue;
+  const withCircle = type === 'progress' && progressValue !== undefined;
 
   return (
     <ButtonStyled
@@ -40,7 +42,7 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
         gradient={type === 'ordinary' ? 'purpleLinear' : 'blueLinear'}>
         {iconFormat}
       </GradientStyled>
-      {withCircle && <Circle progress={progressValue!} />}
+      {withCircle ? <Circle progress={progressValue!} /> : null}
     </ButtonStyled>
   );
 };

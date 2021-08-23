@@ -1,17 +1,19 @@
 /**
  * @format
  */
-import { AppRegistry, Platform } from 'react-native';
+import { AppRegistry } from 'react-native';
+
+import { configure } from '@storybook/react-native';
+
 import { App } from './App';
 import { name as appName } from './app.json';
 import { env } from './config';
 import { StorybookUIRoot } from './storybook';
-import { configure } from '@storybook/react-native';
 import { loadStories } from './storybook/storyLoader';
 
 console.disableYellowBox = true;
 
-if (env.STORYBOOK || Platform.OS === 'ios') {
+if (env.STORYBOOK) {
   // import stories
   configure(() => {
     loadStories();

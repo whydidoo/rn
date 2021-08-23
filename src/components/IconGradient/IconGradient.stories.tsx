@@ -1,9 +1,10 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { IconGradient } from './IconGradient';
+import { storiesOf } from '@storybook/react-native';
+
 import Profile from '../Icons/Light/Arrow - Right 2.svg';
+import { IconGradient } from './IconGradient';
 
 storiesOf('IconGradient', module).add('default', () => (
   <ScrollView>

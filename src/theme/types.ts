@@ -1,7 +1,8 @@
+import { BackgroundProps, BorderProps, OpacityProps } from 'styled-system';
+
+import { TBreakpoints } from './breakpoints';
 import { TColor, ThemeColors } from './colors';
 import { TText } from './typography';
-import { TBreakpoints } from './breakpoints';
-import { BackgroundProps, BorderProps, OpacityProps } from 'styled-system';
 
 export interface ITheme {
   colors: TColor;

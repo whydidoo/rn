@@ -1,9 +1,11 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
+
+import { storiesOf } from '@storybook/react-native';
+
 import { Box } from '../Box';
-import { Input } from './Input';
 import Profile from '../Icons/Bold/Profile.svg';
 import { Unit } from '../Unit';
+import { Input } from './Input';
 
 storiesOf('Input', module).add('Inputs', () => {
   return (

@@ -6,6 +6,7 @@ import {
   ShadowProps,
   SpaceProps,
 } from 'styled-system';
+
 import {
   IThemeBackgroundProps,
   IThemeBordersProps,

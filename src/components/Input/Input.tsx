@@ -1,18 +1,19 @@
 import React, { useCallback } from 'react';
-import { Pressable } from 'react-native';
-import { IInputProps } from './types';
 import { useState } from 'react';
+import { Pressable } from 'react-native';
+
+import { useGetColorsByTheme } from 'theme';
+
 import Hide from '../Icons/Bold/Hide.svg';
 import Show from '../Icons/Bold/Show.svg';
-
+import { formatIcon } from '../utils';
 import {
   IconHideStyled,
   IconStyled,
   InputContainerStyled,
   TextInputStyled,
 } from './styled';
-import { useGetColorsByTheme } from 'theme';
-import { formatIcon } from '../utils';
+import { IInputProps } from './types';
 
 export const Input: React.FC<IInputProps> = ({
   icon,

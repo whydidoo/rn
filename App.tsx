@@ -1,16 +1,27 @@
-import { Toggle } from 'components';
-import React, { useState } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { enableScreens } from 'react-native-screens';
+
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+
+import { MainStack } from 'routes';
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from 'theme';
+import colors from 'theme/colors/colors.json';
+
+enableScreens(false);
+
+const navTheme = DefaultTheme;
+navTheme.colors.background = colors.whiteColor;
 
 export const App: React.FC = () => {
-  const [value, setValue] = useState(true);
   return (
     <ThemeProvider theme={theme}>
-      <View style={{ flex: 1 }} style={{ margin: 50 }}>
-        <Toggle value={value} onChange={value => setValue(value)} />
-      </View>
+      <SafeAreaProvider>
+        <NavigationContainer theme={navTheme}>
+          <MainStack />
+        </NavigationContainer>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 };

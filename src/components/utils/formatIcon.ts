@@ -1,5 +1,6 @@
 import React from 'react';
 import { SvgProps } from 'react-native-svg';
+
 import { TFillProp } from 'theme';
 
 export const formatIcon = (
@@ -11,7 +12,7 @@ export const formatIcon = (
   const element = icon as React.ReactElement;
 
   if (fillProp && !color) {
-    throw new Error('Укажите цвет замены');
+    throw new Error('Укажите цвет свойство замены');
   }
 
   const props = {

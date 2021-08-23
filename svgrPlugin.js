@@ -1,4 +1,4 @@
-function template(
+function templateFunc(
   { template },
   opts,
   { imports, componentName, props, jsx, exports },
@@ -17,4 +17,4 @@ function template(
   `;
 }
 
-module.exports = template;
+module.exports = templateFunc;
