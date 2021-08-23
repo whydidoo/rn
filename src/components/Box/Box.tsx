@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated';
-import styled from 'styled-components/native';
 
+import styled from 'styled-components/native';
 import {
   background,
   border,
@@ -13,6 +13,7 @@ import {
   space,
   color,
 } from 'styled-system';
+
 import { IBoxProps } from './types';
 
 export const styledBox = compose(

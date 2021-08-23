@@ -1,4 +1,5 @@
 import { variant } from 'styled-system';
+
 import typography from './typography.json';
 
 export type TVariantsText = keyof typeof typography;

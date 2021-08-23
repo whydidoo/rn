@@ -1,16 +1,19 @@
 import React from 'react';
-import RNPickerSelect from 'react-native-picker-select';
-import { useGetColorsByTheme } from '../../theme/hooks';
 import { useRef } from 'react';
 import { useMemo } from 'react';
+import { TextStyle } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
+
 import { useTheme } from 'styled-components/native';
+
+import { formatIcon } from 'components/utils';
+
 import { ITheme } from '../../theme';
-import Arrow from '../Icons/Light/Arrow - Down 2.svg';
+import { useGetColorsByTheme } from '../../theme/hooks';
 import { typography } from '../../theme/typography';
+import Arrow from '../Icons/Light/Arrow - Down 2.svg';
 import { IconStyled, SelectContainerStyled } from './styled';
 import { ISelectProps } from './types';
-import { TextStyle } from 'react-native';
-import { formatIcon } from 'components/utils';
 
 export const Select: React.FC<ISelectProps> = ({
   icon,

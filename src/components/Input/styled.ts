@@ -1,8 +1,10 @@
-import css from '@styled-system/css';
 import { View } from 'react-native';
 import { TextInput } from 'react-native';
+
+import css from '@styled-system/css';
 import styled from 'styled-components/native';
 import { typography } from 'theme/typography';
+
 import { InputStyledProps } from './types';
 
 export const InputContainerStyled = styled(View)(
@@ -10,13 +12,13 @@ export const InputContainerStyled = styled(View)(
     position: 'relative',
     flexShrink: 1,
     width: '100%',
+    justifyContent: 'center',
   }),
 );
 
 export const IconStyled = styled(View)(
   css({
     position: 'absolute',
-    top: '15px',
     left: 3,
     zIndex: 2,
   }),
@@ -25,7 +27,6 @@ export const IconStyled = styled(View)(
 export const IconHideStyled = styled(View)(
   css({
     position: 'absolute',
-    top: '15px',
     right: 3,
     zIndex: 2,
   }),
@@ -41,6 +42,7 @@ export const TextInputStyled = styled(TextInput)<InputStyledProps>(
     color: 'gray2',
     ...typography.SmallTextRegular,
     height: 48,
+    py: 0,
   }),
   ({ withIcon, withHide }) =>
     css({

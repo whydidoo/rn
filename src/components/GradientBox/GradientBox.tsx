@@ -1,9 +1,8 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-
 import Animated from 'react-native-reanimated';
-import styled from 'styled-components/native';
 
+import styled from 'styled-components/native';
 import {
   border,
   compose,
@@ -14,8 +13,9 @@ import {
   shadow,
   space,
 } from 'styled-system';
-import { IGradientBoxProps } from './types';
+
 import { getThemeGradient } from '../../theme';
+import { IGradientBoxProps } from './types';
 
 export const styledProps = compose(
   border,

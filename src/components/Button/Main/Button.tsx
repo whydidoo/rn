@@ -1,7 +1,9 @@
 import React from 'react';
 import { useMemo } from 'react';
 import { ViewStyle } from 'react-native';
+
 import { useGetColorsByTheme } from 'theme';
+
 import { formatIcon } from '../../utils';
 import {
   ButtonStyled,
@@ -46,13 +48,13 @@ export const Button: React.FC<IButtonProps> = ({
         gradient={type === 'primary' ? 'blueLinear' : 'purpleLinear'}>
         {iconLeft && (
           <IconLeftStyled>
-            {formatIcon(iconLeft, 24, fillIconLeftProp, whiteColor)}
+            {formatIcon(iconLeft, 20, fillIconLeftProp, whiteColor)}
           </IconLeftStyled>
         )}
         {text ? <TextStyled type={type}>{text}</TextStyled> : null}
         {iconRight && (
           <IconRightStyled>
-            {formatIcon(iconRight, 24, fillIconRightProp, whiteColor)}
+            {formatIcon(iconRight, 20, fillIconRightProp, whiteColor)}
           </IconRightStyled>
         )}
       </GradientStyled>

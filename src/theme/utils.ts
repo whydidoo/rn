@@ -1,4 +1,5 @@
 import { LinearGradientProps } from 'react-native-linear-gradient';
+
 import { TGradient } from './types';
 
 export const getThemeGradient = (

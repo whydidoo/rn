@@ -1,7 +1,8 @@
-import { css } from '@styled-system/css';
 import { View } from 'react-native';
-import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
+
+import { css } from '@styled-system/css';
+import styled from 'styled-components/native';
 
 export const widthToggle = 44;
 export const heightToggle = 24;

@@ -1,14 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import { IToggleProps } from './types';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
-import {
-  CircleStyled,
-  GradientStyled,
-  positionCircle,
-  sizeSircle,
-  widthToggle,
-} from './styled';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Animated, {
   withTiming,
   useAnimatedProps,
@@ -17,7 +9,17 @@ import Animated, {
   interpolate,
   useSharedValue,
 } from 'react-native-reanimated';
+
 import { useGetColorsByTheme, getThemeGradient } from 'theme';
+
+import {
+  CircleStyled,
+  GradientStyled,
+  positionCircle,
+  sizeSircle,
+  widthToggle,
+} from './styled';
+import { IToggleProps } from './types';
 
 const CircleStyledAnimated = Animated.createAnimatedComponent(CircleStyled);
 const AnimatedGradient = Animated.createAnimatedComponent(GradientStyled);

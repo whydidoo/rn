@@ -1,8 +1,10 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
+
+import { storiesOf } from '@storybook/react-native';
+
 import { Box } from '../Box';
-import { Select } from '../Select/Select';
 import Profile from '../Icons/Bold/Profile.svg';
+import { Select } from '../Select/Select';
 
 const sports = [
   {

@@ -1,11 +1,13 @@
-import css, { SystemStyleObject } from '@styled-system/css';
+import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
+import css, { SystemStyleObject } from '@styled-system/css';
 import styled from 'styled-components/native';
 import { variant } from 'styled-system';
-import { IButtonProps, TTypeButton } from './types';
+
 import typography from '../../../theme/typography/typography.json';
-import { Text, View } from 'react-native';
 import { GradientBox } from '../../GradientBox';
+import { IButtonProps, TTypeButton } from './types';
 
 const widthVariants: Record<TTypeButton, SystemStyleObject> = {
   primary: {
@@ -69,6 +71,6 @@ export const IconLeftStyled = styled(View)(
 
 export const IconRightStyled = styled(View)(
   css({
-    ml: 2,
+    ml: '3px',
   }),
 );

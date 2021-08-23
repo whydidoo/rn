@@ -1,11 +1,13 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import { Button } from './Main/Button';
+
+import { storiesOf } from '@storybook/react-native';
+
+import { Box } from '../Box';
+import { Gap } from '../Gap';
 import Login from '../Icons/Bold/Login.svg';
 import User from '../Icons/Light/2 User.svg';
 import { ButtonCircle } from './ButtonCircle';
-import { Box } from '../Box';
-import { Gap } from '../Gap';
+import { Button } from './Main/Button';
 
 storiesOf('Button', module)
   .add('Primary', () => (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { GenericTouchableProps } from 'react-native-gesture-handler/lib/typescript/components/touchables/GenericTouchable';
+
 import { TFillProp } from 'theme';
 
 export type TTypeButton = 'primary' | 'secondary';

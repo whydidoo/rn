@@ -1,6 +1,7 @@
-import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
+
+import { storiesOf } from '@storybook/react-native';
 
 import { Text } from './Text';
 
