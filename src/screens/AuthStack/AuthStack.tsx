@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/stack';
 
 import { Register } from './Register';
+import { RegisterConfirm } from './RegisterConfirm';
 import { RegisterData } from './RegisterData';
 import { TAuthStack } from './types';
 
@@ -35,6 +36,11 @@ export const AuthStack: React.FC = () => {
       <Stack.Screen
         name="RegisterData"
         component={RegisterData}
+        options={{ ...animtationConfig }}
+      />
+      <Stack.Screen
+        name="RegisterConfirm"
+        component={RegisterConfirm}
         options={{ ...animtationConfig }}
       />
     </Stack.Navigator>
