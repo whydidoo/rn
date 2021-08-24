@@ -1,18 +1,16 @@
 import React from 'react';
+import { useMemo } from 'react';
 import { Image } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   interpolate,
 } from 'react-native-reanimated';
 
+import { useSafeAreaThemeParams } from 'theme';
+
 import { AnimatedGradientBox, Box, Text } from 'components';
 
-import {
-  ITEM_HEIGHT,
-  ITEM_WIDTH,
-  OFFSET_ITEM,
-  SCALE_COEFFICIENT_HEIGHT,
-} from './constants';
+import { ITEM_WIDTH, OFFSET_ITEM, SCALE_COEFFICIENT_HEIGHT } from './constants';
 import { ISliderItemProps } from './types';
 
 export const SliderItem: React.FC<
@@ -21,11 +19,18 @@ export const SliderItem: React.FC<
     idx: number;
   }
 > = ({ title, description, translationX, idx, img }) => {
+  const { isLowScreen } = useSafeAreaThemeParams();
+
   const inputRange = [
     (idx - 2) * ITEM_WIDTH,
     (idx - 1) * ITEM_WIDTH,
     idx * ITEM_WIDTH,
   ];
+
+  const styleImg = useMemo(
+    () => ({ height: isLowScreen ? 205 : 300 }),
+    [isLowScreen],
+  );
   const stylesAnimated = useAnimatedStyle(() => {
     return {
       transform: [
@@ -42,20 +47,29 @@ export const SliderItem: React.FC<
   }, [translationX]);
 
   return (
-    <Box width={ITEM_WIDTH} height={ITEM_HEIGHT}>
+    <Box width={ITEM_WIDTH}>
       <AnimatedGradientBox
-        flex={1}
         gradient="blueLinear"
-        style={[stylesAnimated]}
+        style={stylesAnimated}
+        p={6}
         mx={OFFSET_ITEM}
         borderRadius={4}
-        justifyContent="center"
+        justifyContent="space-evenly"
         alignItems="center">
-        <Image source={img} />
-        <Text color="whiteColor">{title}</Text>
-        <Text color="whiteColor" width="40%">
-          {description}
-        </Text>
+        <Image source={img} style={styleImg} resizeMode="contain" />
+        <Box alignItems="center" pt={4}>
+          <Text color="whiteColor" variant="MediumTextSemiBold">
+            {title}
+          </Text>
+          <Box width={50} height="1px" backgroundColor="whiteColor" />
+          <Text
+            mt={5}
+            color="whiteColor"
+            variant="SmallTextRegular"
+            textAlign="center">
+            {description}
+          </Text>
+        </Box>
       </AnimatedGradientBox>
     </Box>
   );

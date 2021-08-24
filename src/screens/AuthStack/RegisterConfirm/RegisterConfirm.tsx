@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Box, Text, ViewArea } from 'components';
+import { Box, Button, Text, ViewArea } from 'components';
 
 import { Slider } from './Slider';
 
@@ -19,6 +19,7 @@ export const RegisterConfirm: React.FC = () => {
         </Text>
       </Box>
       <Slider />
+      <Button text="Confirm" />
     </ViewArea>
   );
 };
