@@ -9,11 +9,9 @@ import { TAuthStack } from '../types';
 import { RegisterForm } from './RegisterForm';
 import { Social } from './Social';
 
-type TNavigationMainPageParams = StackScreenProps<TAuthStack, 'Register'>;
+type TNavigationParams = StackScreenProps<TAuthStack, 'Register'>;
 
-export const Register: React.FC<TNavigationMainPageParams> = ({
-  navigation,
-}) => {
+export const Register: React.FC<TNavigationParams> = ({ navigation }) => {
   return (
     <ViewArea style={style.view}>
       <RegisterForm />

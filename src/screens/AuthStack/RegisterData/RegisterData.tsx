@@ -9,15 +9,20 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
+import { StackScreenProps } from '@react-navigation/stack';
+
 import { useSafeAreaThemeParams } from 'theme';
 
 import { Box, Button, Text, ViewArea } from 'components';
 
 import Arrow from '../../../components/Icons/Light/Arrow - Right 2.svg';
+import { TAuthStack } from '../types';
 import Girl from './girl.png';
 import { RegisterDataForm } from './RegisterDataForm';
 
-export const RegisterData: React.FC = () => {
+type TNavigationParams = StackScreenProps<TAuthStack, 'Register'>;
+
+export const RegisterData: React.FC<TNavigationParams> = ({ navigation }) => {
   const { width, height } = useWindowDimensions();
   const { isLowScreen, bottom } = useSafeAreaThemeParams();
 
@@ -62,7 +67,9 @@ export const RegisterData: React.FC = () => {
             <Button
               type="primary"
               text="Next"
-              onPress={() => {}}
+              onPress={() => {
+                navigation.push('RegisterConfirm');
+              }}
               iconRight={<Arrow />}
             />
           </Box>
