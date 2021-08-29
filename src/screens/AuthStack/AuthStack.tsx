@@ -6,9 +6,11 @@ import {
   TransitionSpecs,
 } from '@react-navigation/stack';
 
+import { Login } from './Login';
 import { Register } from './Register';
 import { RegisterConfirm } from './RegisterConfirm';
 import { RegisterData } from './RegisterData';
+import { RegisterSuccess } from './RegisterSuccess';
 import { TAuthStack } from './types';
 
 const Stack = createStackNavigator<TAuthStack>();
@@ -41,6 +43,16 @@ export const AuthStack: React.FC = () => {
       <Stack.Screen
         name="RegisterConfirm"
         component={RegisterConfirm}
+        options={{ ...animtationConfig }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ ...animtationConfig }}
+      />
+      <Stack.Screen
+        name="RegisterSuccess"
+        component={RegisterSuccess}
         options={{ ...animtationConfig }}
       />
     </Stack.Navigator>

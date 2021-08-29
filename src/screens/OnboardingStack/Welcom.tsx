@@ -29,7 +29,7 @@ export const Welcome: React.FC<TWelcomeProps> = ({ navigation }) => {
       </Box>
       <Button
         text="Get started"
-        onPress={() => navigation.push('Onboarding')}
+        onPress={() => navigation.replace('Onboarding')}
       />
     </Box>
   );
