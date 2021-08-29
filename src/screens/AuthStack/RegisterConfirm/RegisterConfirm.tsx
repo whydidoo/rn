@@ -1,11 +1,18 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import { StackScreenProps } from '@react-navigation/stack';
+
 import { Box, Button, Text, ViewArea } from 'components';
 
+import { TAuthStack } from '../types';
 import { Slider } from './Slider';
 
-export const RegisterConfirm: React.FC = () => {
+type TNavigationParams = StackScreenProps<TAuthStack, 'RegisterConfirm'>;
+
+export const RegisterConfirm: React.FC<TNavigationParams> = ({
+  navigation,
+}) => {
   return (
     <ViewArea style={styles.container}>
       <Box alignItems="center">
@@ -19,7 +26,10 @@ export const RegisterConfirm: React.FC = () => {
         </Text>
       </Box>
       <Slider />
-      <Button text="Confirm" />
+      <Button
+        text="Confirm"
+        onPress={() => navigation.replace('RegisterSuccess')}
+      />
     </ViewArea>
   );
 };

@@ -5,21 +5,24 @@ import { StackScreenProps } from '@react-navigation/stack';
 
 import { Box, Button, Text, ViewArea } from 'components';
 
+import Enter from '../../../components/Icons/Bold/Login.svg';
 import { TAuthStack } from '../types';
-import { RegisterForm } from './RegisterForm';
+import { LoginForm } from './LoginForm';
 import { Social } from './Social';
 
-type TNavigationParams = StackScreenProps<TAuthStack, 'Register'>;
+type TNavigationParams = StackScreenProps<TAuthStack, 'Login'>;
 
-export const Register: React.FC<TNavigationParams> = ({ navigation }) => {
+export const Login: React.FC<TNavigationParams> = ({ navigation }) => {
   return (
     <ViewArea style={style.view}>
-      <RegisterForm />
+      <LoginForm />
       <Box>
         <Button
           type="primary"
-          text="Register"
-          onPress={() => navigation.replace('RegisterData')}
+          iconLeft={<Enter />}
+          fillIconLeftProp="fill"
+          text="Login"
+          onPress={() => {}}
         />
         <Box
           alignItems="center"
@@ -40,11 +43,13 @@ export const Register: React.FC<TNavigationParams> = ({ navigation }) => {
             position="absolute"
           />
         </Box>
+
         <Social />
+
         <Box flexDirection="row" justifyContent="center">
-          <Text textAlign="center">Already have an account? </Text>
-          <Pressable onPress={() => navigation.replace('Login')}>
-            <Text color="purple">Login</Text>
+          <Text textAlign="center">Don’t have an account yet? </Text>
+          <Pressable onPress={() => navigation.replace('Register')}>
+            <Text color="purple">Register</Text>
           </Pressable>
         </Box>
       </Box>

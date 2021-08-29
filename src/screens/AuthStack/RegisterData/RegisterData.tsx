@@ -68,7 +68,7 @@ export const RegisterData: React.FC<TNavigationParams> = ({ navigation }) => {
               type="primary"
               text="Next"
               onPress={() => {
-                navigation.push('RegisterConfirm');
+                navigation.replace('RegisterConfirm');
               }}
               iconRight={<Arrow />}
             />
