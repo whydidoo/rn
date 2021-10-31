@@ -48,7 +48,8 @@ export const RegisterData: React.FC<TNavigationParams> = ({ navigation }) => {
       behavior={Platform.select({
         ios: 'padding',
         android: undefined,
-      })}>
+      })}
+    >
       <ViewArea style={styles.container}>
         <Pressable style={styles.inner} onPress={Keyboard.dismiss}>
           <Box justifyContent="flex-start">

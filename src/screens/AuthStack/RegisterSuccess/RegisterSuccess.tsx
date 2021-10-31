@@ -2,10 +2,19 @@ import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet } from 'react-native';
 
+import { StackScreenProps } from '@react-navigation/stack';
+
+import { TMaintStack } from 'routes/MainStack/types';
+
 import { Box, Button, Text, ViewArea } from 'components';
 
 import People from './people.png';
-export const RegisterSuccess: React.FC = () => {
+
+type TNavigationParams = StackScreenProps<TMaintStack, 'Auth'>;
+
+export const RegisterSuccess: React.FC<TNavigationParams> = ({
+  navigation,
+}) => {
   return (
     <ViewArea style={styles.container}>
       <Box alignItems="center" mt="60px">
@@ -18,13 +27,20 @@ export const RegisterSuccess: React.FC = () => {
           variant="SmallTextRegular"
           color="gray1"
           textAlign="center"
-          maxWidth={214}>
+          maxWidth={214}
+        >
           You are all set now, let’s reach your goals together with us
         </Text>
       </Box>
       <Box flex={1} />
       <Box>
-        <Button type="primary" text="Go To Home" />
+        <Button
+          type="primary"
+          text="Go To Home"
+          onPress={() => {
+            navigation.replace('Home');
+          }}
+        />
       </Box>
     </ViewArea>
   );

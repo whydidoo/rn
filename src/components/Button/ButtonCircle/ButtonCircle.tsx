@@ -13,6 +13,7 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
   icon,
   progressValue,
   fillIconProp = 'stroke',
+  gradient = 'purpleLinear',
   ...props
 }) => {
   const styleContainer: ViewStyle = useMemo(
@@ -36,10 +37,12 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
       type={type}
       {...props}
       containerStyle={styleContainer}
-      activeOpacity={0.8}>
+      activeOpacity={0.8}
+    >
       <GradientStyled
         type={type}
-        gradient={type === 'ordinary' ? 'purpleLinear' : 'blueLinear'}>
+        gradient={type === 'ordinary' ? gradient : 'blueLinear'}
+      >
         {iconFormat}
       </GradientStyled>
       {withCircle ? <Circle progress={progressValue!} /> : null}

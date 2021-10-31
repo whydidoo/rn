@@ -16,7 +16,8 @@ export const Unit: React.FC<TUnitProps> = ({ unit }) => {
         width={48}
         height={48}
         alignItems="center"
-        justifyContent="center">
+        justifyContent="center"
+      >
         <TextUnitStyled>{unit}</TextUnitStyled>
       </GradientBox>
     </ContainerUnitStyled>

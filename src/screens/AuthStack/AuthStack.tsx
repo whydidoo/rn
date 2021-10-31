@@ -29,7 +29,8 @@ export const AuthStack: React.FC = () => {
       initialRouteName="Register"
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Stack.Screen
         name="Register"
         component={Register}

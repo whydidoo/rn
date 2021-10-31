@@ -4,11 +4,11 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Animated, {
   withTiming,
   useAnimatedProps,
-  interpolateColor,
   useAnimatedStyle,
   interpolate,
   useSharedValue,
 } from 'react-native-reanimated';
+import { mixColor } from 'react-native-redash';
 
 import { useGetColorsByTheme, getThemeGradient } from 'theme';
 
@@ -47,11 +47,11 @@ export const Toggle: React.FC<IToggleProps> = ({
   const animatedProps = useAnimatedProps(() => {
     return {
       colors: [
-        interpolateColor(animateValue.value, [0, 1], [gray3, start]),
-        interpolateColor(animateValue.value, [0, 1], [gray3, end]),
+        mixColor(animateValue.value, gray3, start),
+        mixColor(animateValue.value, gray3, end),
       ],
     };
-  }, [animateValue, gray3, end, start]);
+  }, []);
 
   const circleAnimatedStyle = useAnimatedStyle(
     () => ({
@@ -68,12 +68,14 @@ export const Toggle: React.FC<IToggleProps> = ({
     <TouchableWithoutFeedback
       containerStyle={style.container}
       onPress={onPress}
-      disabled={disabled}>
+      disabled={disabled}
+    >
       <AnimatedGradient
         colors={colors}
         animatedProps={animatedProps}
-        {...props}>
-        <CircleStyledAnimated style={[circleAnimatedStyle]} />
+        {...props}
+      >
+        <CircleStyledAnimated style={circleAnimatedStyle} />
       </AnimatedGradient>
     </TouchableWithoutFeedback>
   );
