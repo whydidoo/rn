@@ -24,8 +24,7 @@ export const BottomNavigationStack = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      tabBar={props => <Tabs {...props} />}
-    >
+      tabBar={props => <Tabs {...props} />}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Activity" component={Test} />
       <Stack.Screen name="Camera" component={Home} />

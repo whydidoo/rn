@@ -23,8 +23,7 @@ export const MainStack: React.FC = () => {
       initialRouteName="Auth"
       screenOptions={{
         headerShown: false,
-      }}
-    >
+      }}>
       <Stack.Screen name="Auth" component={AuthStack} />
       <Stack.Screen name="Home" component={BottomNavigationStack} />
     </Stack.Navigator>

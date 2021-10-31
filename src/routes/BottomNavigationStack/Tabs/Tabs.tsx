@@ -22,8 +22,7 @@ export const Tabs: React.FC<BottomTabBarProps> = ({ state, navigation }) => {
       alignItems="center"
       justifyContent="space-between"
       bg="whiteColor"
-      style={styles.container}
-    >
+      style={styles.container}>
       {state.routes.map((item, idx) => {
         const isFocused = idx === state.index;
 

@@ -21,8 +21,7 @@ export const RegisterConfirm: React.FC<TNavigationParams> = ({
           variant="SmallTextRegular"
           color="gray1"
           maxWidth={182}
-          textAlign="center"
-        >
+          textAlign="center">
           It will help us to choose a best program for you
         </Text>
       </Box>

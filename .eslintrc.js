@@ -45,5 +45,8 @@ module.exports = {
     'storyLoader.js',
     'platform/scripts/*.js',
     '*.d.ts',
+    '*.test.ts',
+    '*.test.js',
+    '__tests__',
   ],
 };

@@ -30,8 +30,7 @@ export const OnboardingStack: React.FC<IOnboardingProps> = ({
         initialRouteName="Welcome"
         screenOptions={{
           headerShown: false,
-        }}
-      >
+        }}>
         <Stack.Screen
           name="Welcome"
           component={Welcome}

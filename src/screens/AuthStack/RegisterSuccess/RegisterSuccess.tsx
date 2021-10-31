@@ -27,8 +27,7 @@ export const RegisterSuccess: React.FC<TNavigationParams> = ({
           variant="SmallTextRegular"
           color="gray1"
           textAlign="center"
-          maxWidth={214}
-        >
+          maxWidth={214}>
           You are all set now, let’s reach your goals together with us
         </Text>
       </Box>

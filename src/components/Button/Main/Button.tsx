@@ -42,12 +42,10 @@ export const Button: React.FC<IButtonProps> = ({
       type={type}
       containerStyle={styleContainer}
       activeOpacity={0.8}
-      {...props}
-    >
+      {...props}>
       <GradientStyled
         type={type}
-        gradient={type === 'primary' ? 'blueLinear' : 'purpleLinear'}
-      >
+        gradient={type === 'primary' ? 'blueLinear' : 'purpleLinear'}>
         {iconLeft && (
           <IconLeftStyled>
             {formatIcon(iconLeft, 20, fillIconLeftProp, whiteColor)}

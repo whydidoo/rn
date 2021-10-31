@@ -25,14 +25,12 @@ export const Register: React.FC<TNavigationParams> = ({ navigation }) => {
           alignItems="center"
           justifyContent="center"
           my={4}
-          position="relative"
-        >
+          position="relative">
           <Text
             zIndex={2}
             backgroundColor="whiteColor"
             px={2}
-            variant="SmallTextRegular"
-          >
+            variant="SmallTextRegular">
             Or
           </Text>
           <Box

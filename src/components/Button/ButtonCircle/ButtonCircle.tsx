@@ -37,12 +37,10 @@ export const ButtonCircle: React.FC<IButtonCircleProps> = ({
       type={type}
       {...props}
       containerStyle={styleContainer}
-      activeOpacity={0.8}
-    >
+      activeOpacity={0.8}>
       <GradientStyled
         type={type}
-        gradient={type === 'ordinary' ? gradient : 'blueLinear'}
-      >
+        gradient={type === 'ordinary' ? gradient : 'blueLinear'}>
         {iconFormat}
       </GradientStyled>
       {withCircle ? <Circle progress={progressValue!} /> : null}

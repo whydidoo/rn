@@ -38,15 +38,13 @@ export const Search: React.FC = () => {
         left={0}
         right={0}
         alignItems="center"
-        bottom="100px"
-      >
+        bottom="100px">
         <AnimatedBox
           px={3}
           py={4}
           style={[styles.container, styleModalAnim]}
           borderRadius={2}
-          backgroundColor="whiteColor"
-        >
+          backgroundColor="whiteColor">
           {['Workout Tracker', 'Meal Planner', 'Sleep Tracker'].map(
             (item, idx, arr) => (
               <SearchItem

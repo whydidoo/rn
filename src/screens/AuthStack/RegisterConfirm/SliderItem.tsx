@@ -55,8 +55,7 @@ export const SliderItem: React.FC<
         mx={OFFSET_ITEM}
         borderRadius={4}
         justifyContent="space-evenly"
-        alignItems="center"
-      >
+        alignItems="center">
         <Image source={img} style={styleImg} resizeMode="contain" />
         <Box alignItems="center" pt={4}>
           <Text color="whiteColor" variant="MediumTextSemiBold">
@@ -67,8 +66,7 @@ export const SliderItem: React.FC<
             mt={5}
             color="whiteColor"
             variant="SmallTextRegular"
-            textAlign="center"
-          >
+            textAlign="center">
             {description}
           </Text>
         </Box>

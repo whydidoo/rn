@@ -81,8 +81,7 @@ export const TabItem: React.FC<ITabItemProps> = ({
           <IconsComponent.simple
             fill={'url(#grad)'}
             width={sizeIcon}
-            height={sizeIcon}
-          >
+            height={sizeIcon}>
             <Defs>
               <AnimatedLinearGradient id="grad" x1={0} x2={1}>
                 <Stop offset={0} stopColor={gradient!.colors[0]} />
@@ -98,8 +97,7 @@ export const TabItem: React.FC<ITabItemProps> = ({
           position="absolute"
           top={sizeIcon}
           left="0"
-          right="0"
-        >
+          right="0">
           <AnimatedGradient
             gradient="purpleLinear"
             width={4}

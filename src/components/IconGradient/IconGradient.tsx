@@ -31,8 +31,7 @@ export const IconGradient: React.FC<IIconGradientProps> = ({
           x1={`${x * 100}%`}
           y1={`${y * 100}%`}
           x2={`${x1 * 100}%`}
-          y2={`${y1 * 100}%`}
-        >
+          y2={`${y1 * 100}%`}>
           <Stop offset="0" stopColor={startColor} />
           <Stop offset="1" stopColor={endColor} />
         </LinearGradient>

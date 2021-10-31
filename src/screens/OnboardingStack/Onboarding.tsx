@@ -41,8 +41,7 @@ export const Onboarding: React.FC = () => {
         decelerationRate="fast"
         bounces={false}
         scrollEventThrottle={1}
-        horizontal
-      >
+        horizontal>
         {frames.map((item, idx) => (
           <OdboardingItem {...item} key={idx} />
         ))}
