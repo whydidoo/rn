@@ -7,7 +7,6 @@ export enum BreakpointsAliasEnum {
 
 export type TBreakpointsAliasString = keyof typeof BreakpointsAliasEnum;
 
-export type TBreakpoints<T> = T[] &
-  {
-    [key in TBreakpointsAliasString]: T;
-  };
+export type TBreakpoints<T> = T[] & {
+  [key in TBreakpointsAliasString]: T;
+};

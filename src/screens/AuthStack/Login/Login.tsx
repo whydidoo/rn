@@ -3,6 +3,8 @@ import { Pressable, StyleSheet } from 'react-native';
 
 import { StackScreenProps } from '@react-navigation/stack';
 
+import { TMaintStack } from 'routes/MainStack';
+
 import { Box, Button, Text, ViewArea } from 'components';
 
 import Enter from '../../../components/Icons/Bold/Login.svg';
@@ -10,7 +12,7 @@ import { TAuthStack } from '../types';
 import { LoginForm } from './LoginForm';
 import { Social } from './Social';
 
-type TNavigationParams = StackScreenProps<TAuthStack, 'Login'>;
+type TNavigationParams = StackScreenProps<TAuthStack & TMaintStack, 'Login'>;
 
 export const Login: React.FC<TNavigationParams> = ({ navigation }) => {
   return (
@@ -22,18 +24,22 @@ export const Login: React.FC<TNavigationParams> = ({ navigation }) => {
           iconLeft={<Enter />}
           fillIconLeftProp="fill"
           text="Login"
-          onPress={() => {}}
+          onPress={() => {
+            navigation.replace('Home');
+          }}
         />
         <Box
           alignItems="center"
           justifyContent="center"
           my={4}
-          position="relative">
+          position="relative"
+        >
           <Text
             zIndex={2}
             backgroundColor="whiteColor"
             px={2}
-            variant="SmallTextRegular">
+            variant="SmallTextRegular"
+          >
             Or
           </Text>
           <Box

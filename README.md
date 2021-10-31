@@ -1,2 +1,0 @@
-# rn
-React Native Application 

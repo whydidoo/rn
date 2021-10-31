@@ -22,7 +22,8 @@ export const Social: React.FC = () => {
             alignItems="center"
             justifyContent="center"
             marginRight={idx % 2 === 0 ? 6 : 0}
-            borderColor="gray3">
+            borderColor="gray3"
+          >
             <Image source={img} />
           </Box>
         );

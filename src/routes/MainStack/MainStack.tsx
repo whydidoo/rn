@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { OnboardingStack } from 'screens';
 import { AuthStack } from 'screens/AuthStack/AuthStack';
 
+import { BottomNavigationStack } from '../BottomNavigationStack';
 import { useGetIsOnboardingComplete } from './hooks';
 import { TMaintStack } from './types';
 
@@ -22,8 +23,10 @@ export const MainStack: React.FC = () => {
       initialRouteName="Auth"
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Stack.Screen name="Auth" component={AuthStack} />
+      <Stack.Screen name="Home" component={BottomNavigationStack} />
     </Stack.Navigator>
   );
 };
