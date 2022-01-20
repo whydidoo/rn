@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Pressable } from 'react-native';
 
 import { useGetColorsByTheme } from 'theme';

@@ -1,6 +1,4 @@
-import React from 'react';
-import { useRef } from 'react';
-import { useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { TextStyle } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 

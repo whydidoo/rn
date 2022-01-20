@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, {
   interpolate,

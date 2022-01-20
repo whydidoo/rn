@@ -1,5 +1,4 @@
-import React, { ReactElement } from 'react';
-import { useMemo } from 'react';
+import React, { ReactElement, useMemo } from 'react';
 import { Defs, LinearGradient, Stop, SvgProps } from 'react-native-svg';
 
 import { getThemeGradient } from 'theme';
