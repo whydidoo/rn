@@ -1,6 +1,4 @@
-import React from 'react';
-import { useMemo } from 'react';
-import { useCallback } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Animated, {

@@ -1,7 +1,4 @@
-import React, { useContext } from 'react';
-import { useRef } from 'react';
-import { useState } from 'react';
-import { useCallback } from 'react';
+import React, { useContext, useRef, useState, useCallback } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 

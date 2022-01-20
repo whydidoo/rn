@@ -26,7 +26,7 @@ module.exports = {
     'import-helpers/order-imports': [
       'error',
       {
-        newlinesBetween: 'always', // new line between groups
+        newlinesBetween: 'always',
         groups: [
           '/^react/',
           '/^react-native/',
