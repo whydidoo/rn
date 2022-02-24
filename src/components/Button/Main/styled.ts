@@ -36,7 +36,7 @@ const gradientVariants: Record<TTypeButton, SystemStyleObject> = {
   },
   secondary: {
     py: 2,
-    px: 6,
+    px: 5,
     borderRadius: 10,
   },
 };

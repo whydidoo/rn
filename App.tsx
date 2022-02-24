@@ -1,4 +1,5 @@
 import React from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { enableScreens } from 'react-native-screens';
 
@@ -18,9 +19,11 @@ export const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaProvider>
-        <NavigationContainer theme={navTheme}>
-          <MainStack />
-        </NavigationContainer>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <NavigationContainer theme={navTheme}>
+            <MainStack />
+          </NavigationContainer>
+        </GestureHandlerRootView>
       </SafeAreaProvider>
     </ThemeProvider>
   );

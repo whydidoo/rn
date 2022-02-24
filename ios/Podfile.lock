@@ -280,35 +280,6 @@ PODS:
     - React-Core
   - react-native-safe-area-context (3.3.2):
     - React-Core
-  - react-native-skia (0.1.69):
-    - React
-    - React-callinvoker
-    - React-Core
-    - react-native-skia/Api (= 0.1.69)
-    - react-native-skia/Jsi (= 0.1.69)
-    - react-native-skia/RNSkia (= 0.1.69)
-    - react-native-skia/SkiaHeaders (= 0.1.69)
-    - react-native-skia/Utils (= 0.1.69)
-  - react-native-skia/Api (0.1.69):
-    - React
-    - React-callinvoker
-    - React-Core
-  - react-native-skia/Jsi (0.1.69):
-    - React
-    - React-callinvoker
-    - React-Core
-  - react-native-skia/RNSkia (0.1.69):
-    - React
-    - React-callinvoker
-    - React-Core
-  - react-native-skia/SkiaHeaders (0.1.69):
-    - React
-    - React-callinvoker
-    - React-Core
-  - react-native-skia/Utils (0.1.69):
-    - React
-    - React-callinvoker
-    - React-Core
   - React-perflogger (0.66.1)
   - React-RCTActionSheet (0.66.1):
     - React-Core/RCTActionSheetHeaders (= 0.66.1)
@@ -378,9 +349,9 @@ PODS:
     - React-Core
   - RNCPicker (1.16.8):
     - React-Core
-  - RNGestureHandler (1.10.3):
+  - RNGestureHandler (2.1.2):
     - React-Core
-  - RNReanimated (2.3.0-beta.3):
+  - RNReanimated (2.4.1):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -406,7 +377,6 @@ PODS:
     - React-RCTNetwork
     - React-RCTSettings
     - React-RCTText
-    - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
   - RNScreens (3.9.0):
@@ -462,7 +432,6 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-config (from `../node_modules/react-native-config`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
-  - "react-native-skia (from `../node_modules/@shopify/react-native-skia`)"
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -541,8 +510,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-config"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
-  react-native-skia:
-    :path: "../node_modules/@shopify/react-native-skia"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -616,7 +583,6 @@ SPEC CHECKSUMS:
   React-logger: bfddd3418dc1d45b77b822958f3e31422e2c179b
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
   react-native-safe-area-context: 5cf05f49df9d17261e40e518481f2e334c6cd4b5
-  react-native-skia: 09e8e995d0647d9d19b391e803a9d6d2b3d558bf
   React-perflogger: fcac6090a80e3d967791b4c7f1b1a017f9d4a398
   React-RCTActionSheet: caf5913d9f9e605f5467206cf9d1caa6d47d7ad6
   React-RCTAnimation: 6539e3bf594f6a529cd861985ba6548286ae1ead
@@ -631,8 +597,8 @@ SPEC CHECKSUMS:
   ReactCommon: 620442811dc6f707b4bf5e3b27d4f19c12d5a821
   RNCAsyncStorage: d599364c12b1ddb042cc2d7ab6f8258962b83097
   RNCPicker: 0991c56da7815c0cf946d6f63cf920b25296e5f6
-  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
-  RNReanimated: ee76770869ffe2a76fcd612d4204cc7787169593
+  RNGestureHandler: 392653c717564ab35d6b322d7b56b10a54d88dbd
+  RNReanimated: e8afbe2a9e08e9e778ea72ddb1a8533445812621
   RNScreens: 4d79118be80f79fa1f4aa131909a1d6e86280af3
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   Yoga: 2b4a01651f42a32f82e6cef3830a3ba48088237f
@@ -640,4 +606,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4f508bb8e490fe23c44fffb07fec66bc5959cba9
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.2

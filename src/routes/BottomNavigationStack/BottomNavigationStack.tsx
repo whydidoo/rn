@@ -2,22 +2,26 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Text, ViewArea } from 'components';
+import { Home } from 'screens';
+
+import { DailyAction, Gap, ProcentBanner, ViewArea } from 'components';
 
 import { Tabs } from './Tabs';
-import { Breathe } from './Test1';
 import { BottomNavigationStackProps } from './types';
 
 const Stack = createBottomTabNavigator<BottomNavigationStackProps>();
 
-const Test: React.FC = () => (
-  <ViewArea>
-    <Text>Test</Text>
-  </ViewArea>
-);
-
-const Home: React.FC = () => {
-  return <Breathe />;
+const Test: React.FC = () => {
+  return (
+    <ViewArea>
+      <ProcentBanner
+        title="BMI (Body Mass Index)"
+        subtitle="You have a normal weight"
+      />
+      <Gap size={32} vertical={true} />
+      <DailyAction text="Compare my Photo" />
+    </ViewArea>
+  );
 };
 
 const optionsScreen = {
@@ -31,7 +35,7 @@ export const BottomNavigationStack = () => {
       tabBar={props => <Tabs {...props} />}>
       <Stack.Screen name="Home" component={Home} options={optionsScreen} />
       <Stack.Screen name="Activity" component={Test} options={optionsScreen} />
-      <Stack.Screen name="Camera" component={Home} options={optionsScreen} />
+      <Stack.Screen name="Camera" component={Test} options={optionsScreen} />
       <Stack.Screen name="Profile" component={Test} options={optionsScreen} />
     </Stack.Navigator>
   );

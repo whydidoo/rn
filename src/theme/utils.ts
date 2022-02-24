@@ -37,12 +37,11 @@ export const getThemeGradient = (
         colors: ['#C58BF2', '#B4C0FE'],
       };
     case 'logoLinear':
+    default:
       return {
         colors: ['#9DCEFF', '#CC8FED'],
         start: { x: 0, y: 1 },
         end: { x: 1, y: 1 },
       };
-    default:
-      return null;
   }
 };
