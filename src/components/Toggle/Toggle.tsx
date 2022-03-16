@@ -24,6 +24,13 @@ import { IToggleProps } from './types';
 const CircleStyledAnimated = Animated.createAnimatedComponent(CircleStyled);
 const AnimatedGradient = Animated.createAnimatedComponent(GradientStyled);
 
+Animated.addWhitelistedNativeProps({
+  colors: true,
+});
+Animated.addWhitelistedUIProps({
+  colors: true,
+});
+
 export const Toggle: React.FC<IToggleProps> = ({
   value,
   disabled,
@@ -69,10 +76,7 @@ export const Toggle: React.FC<IToggleProps> = ({
       containerStyle={style.container}
       onPress={onPress}
       disabled={disabled}>
-      <AnimatedGradient
-        colors={colors}
-        animatedProps={animatedProps}
-        {...props}>
+      <AnimatedGradient colors={[]} animatedProps={animatedProps} {...props}>
         <CircleStyledAnimated style={circleAnimatedStyle} />
       </AnimatedGradient>
     </TouchableWithoutFeedback>

@@ -8,3 +8,6 @@ export * from './Input';
 export * from './Select';
 export * from './Toggle';
 export * from './ViewArea';
+export * from './Banners';
+export * from './DailyAction';
+export * from './Statuses';
