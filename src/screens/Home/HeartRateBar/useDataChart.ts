@@ -12,7 +12,7 @@ const getDomain = (domain: number[]) => [
   Math.min(...domain),
   Math.max(...domain),
 ];
-interface DataPoint {
+export interface DataPoint {
   date: number;
   value: number;
 }
@@ -20,13 +20,13 @@ export const useDataChart = (
   translation: Vector<Animated.SharedValue<number>>,
   layout?: LayoutRectangle,
 ) => {
-  const [activeIndex, setActiveIndex] = useState(23);
   const values = useRef(generateChartData()).current;
+  const [position, setPosition] = useState(25);
 
   const width = layout?.width || 150;
+  const stepX = width / (values.length - 1);
+
   const height = width / 2.1;
-  const heartRateData = values[activeIndex];
-  const widthActiveLine = (width / values.length) * activeIndex + 1;
 
   const scaleX = scaleTime()
     .domain(getDomain(values.map(d => d.date)))
@@ -36,30 +36,29 @@ export const useDataChart = (
     .domain(getDomain(values.map(d => d.value)))
     .range([height - 50, 50]);
 
+  const fullPath = shape
+    .line<DataPoint>()
+    .x(p => {
+      return scaleX(p.date);
+    })
+    .y(p => scaleY(p.value))(values) as string;
+
   const activeLine = shape
     .line<DataPoint>()
     .x(p => scaleX(p.date))
-    .y(p => scaleY(p.value))(values.slice(0, activeIndex + 1)) as string;
+    .y(p => scaleY(p.value))(values.slice(0, position + 1)) as string;
 
-  const passivePath = shape
-    .line<DataPoint>()
-    .x(p => scaleX(p.date))
-    .y(p => scaleY(p.value))(values.slice(activeIndex)) as string;
-
-  const fullPath = shape
-    .line<DataPoint>()
-    .x(p => scaleX(p.date))
-    .y(p => scaleY(p.value))(values) as string;
+  const heartRateData = values[position];
+  const widthActiveLine = (width / values.length) * (position + 1);
 
   return {
     width,
     height,
-    heartRateData,
-    activeCoverLine: `${activeLine}L ${widthActiveLine} ${height} L 0 ${height}`,
-    activeLine,
-    passivePath,
     parsePath: parse(fullPath),
-    activeIndex,
-    setActiveIndex,
+    stepX,
+    activeLine,
+    activeCoverLine: `${activeLine}L ${widthActiveLine} ${height} L 0 ${height}`,
+    heartRateData,
+    setPosition,
   };
 };

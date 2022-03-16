@@ -76,7 +76,7 @@ export const Toggle: React.FC<IToggleProps> = ({
       containerStyle={style.container}
       onPress={onPress}
       disabled={disabled}>
-      <AnimatedGradient animatedProps={animatedProps} {...props}>
+      <AnimatedGradient colors={[]} animatedProps={animatedProps} {...props}>
         <CircleStyledAnimated style={circleAnimatedStyle} />
       </AnimatedGradient>
     </TouchableWithoutFeedback>
