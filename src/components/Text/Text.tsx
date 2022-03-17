@@ -9,7 +9,12 @@ import Svg, {
 import { useGetLayout } from 'hooks';
 import styled from 'styled-components/native';
 import { compose, typography } from 'styled-system';
-import { getThemeGradient, TGradient, useGetTypography } from 'theme';
+import {
+  getLinearCoordinates,
+  getThemeGradient,
+  TGradient,
+  useGetTypography,
+} from 'theme';
 
 import {
   textTransform,
@@ -37,12 +42,8 @@ export const GradientText: React.FC<IGradientTextProps> = ({
   const textParams = useGetTypography()[variant];
   const { getLayout, layout } = useGetLayout();
 
-  const x1 = params.start?.x ? `${params.start.x * 100}%` : '0';
-  const y1 = params.start?.y ? `${params.start.y * 100}%` : '0';
-  const x2 = params.end?.x ? `${params.end.x * 100}%` : '100%';
-  const y2 = params.end?.y ? `${params.end.x * 100}%` : '100%';
+  const linersCoordinates = getLinearCoordinates(params);
 
-  console.log(layout?.width);
   return (
     <>
       {!layout ? (
@@ -52,7 +53,7 @@ export const GradientText: React.FC<IGradientTextProps> = ({
       ) : null}
       <Svg height={textParams.fontSize} width={layout?.width}>
         <Defs>
-          <LinearGradient id="grad" x1={x1} y1={y1} x2={x2} y2={y2}>
+          <LinearGradient id="grad" {...linersCoordinates}>
             <Stop offset="0" stopColor={params.colors[0]} />
             <Stop offset="1" stopColor={params.colors[1]} />
           </LinearGradient>

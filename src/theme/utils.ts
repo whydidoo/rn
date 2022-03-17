@@ -4,10 +4,7 @@ import { TGradient } from './types';
 
 export const getThemeGradient = (
   gradientName: TGradient,
-): Pick<
-  LinearGradientProps,
-  'start' | 'locations' | 'colors' | 'end'
-> | null => {
+): Pick<LinearGradientProps, 'start' | 'locations' | 'colors' | 'end'> => {
   switch (gradientName) {
     case 'blueLinear':
       return {
@@ -44,4 +41,15 @@ export const getThemeGradient = (
         end: { x: 1, y: 1 },
       };
   }
+};
+
+type TParams = ReturnType<typeof getThemeGradient>;
+
+export const getLinearCoordinates = (params: TParams) => {
+  const x1 = params.start?.x ? `${params.start.x * 100}%` : '0';
+  const y1 = params.start?.y ? `${params.start.y * 100}%` : '0';
+  const x2 = params.end?.x ? `${params.end.x * 100}%` : '100%';
+  const y2 = params.end?.y ? `${params.end.x * 100}%` : '100%';
+
+  return { x1, y1, x2, y2 };
 };
