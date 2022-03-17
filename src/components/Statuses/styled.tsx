@@ -9,6 +9,7 @@ const ContainerStatusStyled = styled.View(
     p: 4,
     backgroundColor: 'whiteColor',
     borderRadius: 4,
+    width: '100%',
   }),
 );
 
