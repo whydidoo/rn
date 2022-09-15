@@ -1,16 +1,19 @@
 import React from 'react';
-import { Image } from 'react-native';
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 
 import { StackScreenProps } from '@react-navigation/stack';
 
-import { TMaintStack } from 'routes/MainStack/types';
+import { TMaintStack } from 'routes';
+import { TAuthStack } from 'screens/AuthStack/types';
 
 import { Box, Button, Text, ViewArea } from 'components';
 
 import People from './people.png';
 
-type TNavigationParams = StackScreenProps<TMaintStack, 'Auth'>;
+type TNavigationParams = StackScreenProps<
+  TAuthStack & TMaintStack,
+  'RegisterSuccess'
+>;
 
 export const RegisterSuccess: React.FC<TNavigationParams> = ({
   navigation,

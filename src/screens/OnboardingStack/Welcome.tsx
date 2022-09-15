@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StackScreenProps } from '@react-navigation/stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { useSafeAreaThemeParams } from 'theme';
 import { TColorNames } from 'theme/colors';
@@ -9,7 +9,7 @@ import { Box, Button, Text } from 'components';
 
 import { TOnboardingStack } from './types';
 
-type TWelcomeProps = StackScreenProps<TOnboardingStack, 'Welcome'>;
+type TWelcomeProps = NativeStackScreenProps<TOnboardingStack, 'Welcome'>;
 
 export const Welcome: React.FC<TWelcomeProps> = ({ navigation }) => {
   const { left, right, bottom } = useSafeAreaThemeParams();
@@ -18,7 +18,7 @@ export const Welcome: React.FC<TWelcomeProps> = ({ navigation }) => {
     <Box justifyContent="center" flex={1} pb={bottom} pr={right} pl={left}>
       <Box alignItems="center" justifyContent="center" flex={1}>
         <Text variant="H1Bold" fontSize={36} lineHeight={54}>
-          Fitnest
+          Fitness
           <Text fontSize={50} lineHeight={54} color={'#b2a4ec' as TColorNames}>
             X
           </Text>

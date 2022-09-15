@@ -15,7 +15,7 @@ import { TAuthStack } from './types';
 
 const Stack = createStackNavigator<TAuthStack>();
 
-const animtationConfig = {
+const animationConfig = {
   transitionSpec: {
     open: TransitionSpecs.TransitionIOSSpec,
     close: TransitionSpecs.TransitionIOSSpec,
@@ -33,27 +33,27 @@ export const AuthStack: React.FC = () => {
       <Stack.Screen
         name="Register"
         component={Register}
-        options={{ ...animtationConfig }}
+        options={{ ...animationConfig }}
       />
       <Stack.Screen
         name="RegisterData"
         component={RegisterData}
-        options={{ ...animtationConfig }}
+        options={{ ...animationConfig }}
       />
       <Stack.Screen
         name="RegisterConfirm"
         component={RegisterConfirm}
-        options={{ ...animtationConfig }}
+        options={{ ...animationConfig }}
       />
       <Stack.Screen
         name="Login"
         component={Login}
-        options={{ ...animtationConfig }}
+        options={{ ...animationConfig }}
       />
       <Stack.Screen
         name="RegisterSuccess"
         component={RegisterSuccess}
-        options={{ ...animtationConfig }}
+        options={{ ...animationConfig }}
       />
     </Stack.Navigator>
   );

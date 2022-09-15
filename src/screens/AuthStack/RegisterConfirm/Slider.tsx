@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import Animated, {
@@ -35,16 +35,10 @@ export const Slider: React.FC = () => {
     [left, right],
   );
 
-  const keyExtracor = useCallback((_, idx) => String(idx), []);
+  const keyExtractor = useCallback((_, idx) => String(idx), []);
 
   const renderItem = useCallback(
-    ({
-      item,
-      index,
-    }: {
-      item: ISliderItemProps | IEmptySliderItem;
-      index: number;
-    }) => {
+    ({ item, index }) => {
       if ((item as IEmptySliderItem).key) {
         return <Box width={SPACER_SIZE} />;
       }
@@ -74,7 +68,7 @@ export const Slider: React.FC = () => {
       snapToAlignment="start"
       scrollEventThrottle={16}
       data={dataRender}
-      keyExtractor={keyExtracor}
+      keyExtractor={keyExtractor}
       renderItem={renderItem}
     />
   );

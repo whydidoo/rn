@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react-native';
 
 import { Box } from '../Box';
 import Profile from '../Icons/Bold/Profile.svg';
-import { Select } from '../Select/Select';
+import { Select } from '../Select';
 
 const sports = [
   {
@@ -31,7 +31,7 @@ storiesOf('Select', module).add('default', () => {
         placeholder="With Icon"
         items={sports}
         onValueChange={() => {}}
-        icon={<Profile stroke="#fff" needFillColor />}
+        icon={<Profile stroke="#fff" />}
       />
     </Box>
   );

@@ -12,8 +12,8 @@ interface IWaterIntakePointProps extends IPointWater {
   isLast: boolean;
 }
 
-const shadowOffset = [0, 4] as TShadowOffest;
-const shadowSize = [5, 5] as TShadowSize;
+const shadowOffset = [0, 4] as unknown as TShadowOffest;
+const shadowSize = [5, 5] as unknown as TShadowSize;
 
 export const WaterIntakePoint: React.FC<IWaterIntakePointProps> = ({
   title,

@@ -20,7 +20,7 @@ import { TAuthStack } from '../types';
 import Girl from './girl.png';
 import { RegisterDataForm } from './RegisterDataForm';
 
-type TNavigationParams = StackScreenProps<TAuthStack, 'Register'>;
+type TNavigationParams = StackScreenProps<TAuthStack, 'RegisterData'>;
 
 export const RegisterData: React.FC<TNavigationParams> = ({ navigation }) => {
   const { width, height } = useWindowDimensions();

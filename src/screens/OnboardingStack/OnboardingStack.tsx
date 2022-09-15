@@ -1,19 +1,19 @@
 import React from 'react';
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   CardStyleInterpolators,
-  createStackNavigator,
+  TransitionSpecs,
 } from '@react-navigation/stack';
-import { TransitionSpecs } from '@react-navigation/stack';
 
 import { OnboardingContext } from './context';
 import { Onboarding } from './Onboarding';
 import { IOnboardingProps, TOnboardingStack } from './types';
-import { Welcome } from './Welcom';
+import { Welcome } from './Welcome';
 
-const Stack = createStackNavigator<TOnboardingStack>();
+const Stack = createNativeStackNavigator<TOnboardingStack>();
 
-const animtationConfig = {
+const animationConfig = {
   transitionSpec: {
     open: TransitionSpecs.TransitionIOSSpec,
     close: TransitionSpecs.TransitionIOSSpec,
@@ -41,7 +41,7 @@ export const OnboardingStack: React.FC<IOnboardingProps> = ({
           component={Onboarding}
           options={{
             gestureEnabled: false,
-            ...animtationConfig,
+            ...animationConfig,
           }}
         />
       </Stack.Navigator>

@@ -28,7 +28,7 @@ storiesOf('Input', module).add('Inputs', () => {
         <Input
           placeholder="secure"
           secureTextEntry
-          icon={<Profile width={18} height={18} needStrokeColor />}
+          icon={<Profile width={18} height={18} />}
         />
         <Box width={15} />
         <Unit unit="KG" />

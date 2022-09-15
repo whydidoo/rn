@@ -39,7 +39,8 @@ export const TabItem: React.FC<ITabItemProps> = ({
   routeKey,
   routeName,
 }) => {
-  const IconsComponent = Icons[routeName as keyof BottomNavigationStackProps];
+  const route = routeName as keyof BottomNavigationStackProps;
+  const IconsComponent = Icons[route];
   const animValue = useSharedValue(Number(isFocused));
 
   useEffect(() => {
@@ -56,9 +57,9 @@ export const TabItem: React.FC<ITabItemProps> = ({
     });
 
     if (!isFocused && !event.defaultPrevented) {
-      navigation.navigate(routeName);
+      navigation.navigate({ name: route, key: routeKey, merge: true });
     }
-  }, [isFocused, navigation, routeKey, routeName]);
+  }, [isFocused, navigation, routeKey, route]);
 
   const gradient = getThemeGradient('purpleLinear');
 
@@ -68,7 +69,7 @@ export const TabItem: React.FC<ITabItemProps> = ({
     };
   }, [animValue]);
 
-  const styleCirecle = useAnimatedStyle(() => ({ opacity: animValue.value }));
+  const styleCircle = useAnimatedStyle(() => ({ opacity: animValue.value }));
 
   return (
     <Pressable onPress={onPress}>
@@ -102,7 +103,7 @@ export const TabItem: React.FC<ITabItemProps> = ({
             width={4}
             height={4}
             borderRadius={4}
-            style={styleCirecle}
+            style={styleCircle}
           />
         </Box>
       </Box>

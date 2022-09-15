@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {
+  BottomTabBarProps,
+  createBottomTabNavigator,
+} from '@react-navigation/bottom-tabs';
 
 import { Home } from 'screens';
 
@@ -28,11 +31,11 @@ const optionsScreen = {
   headerShown: false,
 };
 
+const renderTabBar = (props: BottomTabBarProps) => <Tabs {...props} />;
+
 export const BottomNavigationStack = () => {
   return (
-    <Stack.Navigator
-      initialRouteName="Home"
-      tabBar={props => <Tabs {...props} />}>
+    <Stack.Navigator initialRouteName="Home" tabBar={renderTabBar}>
       <Stack.Screen name="Home" component={Home} options={optionsScreen} />
       <Stack.Screen name="Activity" component={Test} options={optionsScreen} />
       <Stack.Screen name="Camera" component={Test} options={optionsScreen} />
