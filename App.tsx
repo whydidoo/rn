@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, {type PropsWithChildren} from 'react';
+import React, { type PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -18,7 +18,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import { useSharedValue } from 'react-native-reanimated';
 import {
   Colors,
   DebugInstructions,
@@ -31,7 +31,7 @@ const Section: React.FC<
   PropsWithChildren<{
     title: string;
   }>
-> = ({children, title}) => {
+> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -58,6 +58,8 @@ const Section: React.FC<
 };
 
 const App = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const _value = useSharedValue(0);
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

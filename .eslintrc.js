@@ -41,7 +41,7 @@ module.exports = {
           '/^components/',
           ['parent', 'sibling', 'index'],
         ],
-        alphabetize: {order: 'asc', ignoreCase: true},
+        alphabetize: { order: 'asc', ignoreCase: true },
       },
     ],
   },
