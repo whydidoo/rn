@@ -1,0 +1,5 @@
+plugins:
+  removeAttrs:
+    attrs: 'path:fill'
+  sortAttrs: true
+  removeXMLNS: true

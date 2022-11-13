@@ -1,20 +1,12 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json" /* Recommended React Native TSConfig base */,
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
-    /* Completeness */
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  },
-  "baseUrl": ".",
-  "paths": {
-    "*": ["src/*"],
-    "@components": ["src/components"]
-  },
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
-  ]
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "types": ["react-native", "jest", "styled-components-react-native"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "@components": ["src/components"]
+    }
+  }
 }
